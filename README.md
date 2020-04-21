@@ -132,6 +132,7 @@ they are considered duplicates:</strong> Operations for the same issuer and near
 * <strong>nyc.js:</strong> It will allow me to have a measure of the <strong>coverage</strong> of the unittests
 
 ## How to use the code
+* Install Mongodb
 * Install the lastes version of node from: <a href=" https://nodejs.org/en/"><strong> Install node </strong></a>
 * Install NodeJs.msi
 * Open Node.js command prompt and see the installed version
