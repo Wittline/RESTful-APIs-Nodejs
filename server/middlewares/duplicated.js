@@ -18,62 +18,73 @@ exports.duplicated= function(req, res, next){
                     ids.push(element._id)
                 });     
                 
-                
-                var issuers  = callbackPostData.value.issuers.map(u => { return {
-                    issuer_name: u.issuer_name,
-                    total_shares: u.total_shares,
-                    share_price: u.share_price                    
-                  }});
-                
+                if(ids.length > 0){
 
-                Orders.find( { "_id" :  { $in : ids }, "issuer_name" :  req.body.issuer_name })
-                .select('-_id timestamp')
-                .sort('-timestamp')                 
-                .exec(function(err,ordersfound){
-                            if(err){
-                                return res.status(500).send({message:err});                         
-                            }
-                            else {
-                                if(!ordersfound){ 
-                                    next();
-                                }
-                                else{ 
-                                    
-                                    var tmscurrent = req.body.timestamp
-                                    var tms = ordersfound[0].timestamp
+                    var issuers  = callbackPostData.value.issuers.map(u => { return {
+                        issuer_name: u.issuer_name,
+                        total_shares: u.total_shares,
+                        share_price: u.share_price                    
+                      }});
 
-                                    if((tmscurrent-tms) >= config.api.interval ) {
+                      Orders.find( { "_id" :  { $in : ids }, "issuer_name" :  req.body.issuer_name })
+                      .select('-_id timestamp')
+                      .sort('-timestamp')                 
+                      .exec(function(err,ordersfound){
+                                  if(err){
+                                      return res.status(500).send({message:err});                         
+                                  }
+                                  else {
+                                      if(!ordersfound){ 
+                                          next();
+                                      }
+                                      else{ 
+                                          if(ordersfound.length > 0)
+                                          {
+                                                
+                                                var tmscurrent = req.body.timestamp
+                                                var tms = ordersfound[0].timestamp
+            
+                                                if((tmscurrent-tms) >= config.api.interval ) {
+            
+                                                    next();
+                                                }
+                                                else if(tms > tmscurrent){
+            
+                                                    var result = {};
+                                                    result.current_balance = {};
+                                                    result.business_error = [];
+                                                    result.business_error.push("Invalid Operation");
+                                                    
+                                                    result.current_balance.cash = callbackPostData.value.cash
+                                                    result.current_balance.issuers = issuers
+                                
+                                                    return res.status(404).send(result); 
+                                                }   
+                                                else{
+                                                                                                                                    
+                                                    var result = {};
+                                                    result.current_balance = {};
+                                                    result.business_error = [];
+                                                    result.business_error.push("Duplicated Operation");
+                                                    
+                                                    result.current_balance.cash = callbackPostData.value.cash
+                                                    result.current_balance.issuers = issuers
+                                
+                                                    return res.status(202).send(result);   
+                                                }                              
+                                            }
+                                            else{
 
-                                        next();
-                                    }
-                                    else if(tms > tmscurrent){
+                                                next();
+                                            }                                         
+                                      }
+                                  }    
+                      }); 
 
-                                        var result = {};
-                                        result.current_balance = {};
-                                        result.business_error = [];
-                                        result.business_error.push("Invalid Operation");
-                                        
-                                        result.current_balance.cash = callbackPostData.value.cash
-                                        result.current_balance.issuers = issuers
-                    
-                                        return res.status(callbackPostData.httpcode).send(result); 
-                                    }   
-                                    else{
-                                                                                                                        
-                                        var result = {};
-                                        result.current_balance = {};
-                                        result.business_error = [];
-                                        result.business_error.push("Duplicated Operation");
-                                        
-                                        result.current_balance.cash = callbackPostData.value.cash
-                                        result.current_balance.issuers = issuers
-                    
-                                        return res.status(callbackPostData.httpcode).send(result);   
-                                    }                              
-                                    
-                                }
-                            }    
-                }); 
+                }
+                else{
+                    next();
+                }            
             }
         }); 
 };

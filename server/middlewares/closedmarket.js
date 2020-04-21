@@ -9,16 +9,19 @@ exports.closedmarket= function(req, res, next){
 
     var hour_request = 0
 
-    try {
+    if(req.body.timestamp === undefined){
+
+        var date = new Date();
+        var tms = date.getTime() / 1000;        
+        hour_request = moment.unix(tms).format("HH") 
+    }
+    else {
 
         hour_request = moment.unix(req.body.timestamp).format("HH");
+    
     }
-    catch(ex){
-        var date = new Date();
-        var tms = date.getTime();        
-        hour_request = moment.unix(tms).format("HH")
-    }          
-
+    
+    
     if(hour_request >= config.api.closed_market_hour_start && hour_request <= config.api.closed_market_hour_end){
 
         next();

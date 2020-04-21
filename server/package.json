@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "test": "mocha"
+    "test": "mocha",
+    "coverage": "nyc --reporter=lcov npm run test"
   },
   "author": "Ramses Coraspe",
   "license": "MIT",
@@ -25,7 +26,9 @@
     "babel": "^6.23.0",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
+    "istanbul": "^0.4.5",
     "mocha": "^7.1.1",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "nyc": "^15.0.1"
   }
 }

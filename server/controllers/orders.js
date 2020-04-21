@@ -97,7 +97,7 @@ function validateOperation(account, orders, operation, callback){
                     else{
 
                         if(!orderstored){
-                            callback({value:null, httpcode:400, message:err});   
+                            callback({value:null, httpcode:404, message:err});   
                         }
                         else {    
                             
