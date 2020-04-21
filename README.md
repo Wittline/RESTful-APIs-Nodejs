@@ -143,8 +143,9 @@ The existing code is non-blocking code, because of this, it can be easily scaled
 The application has a file called tests.js in the "test" folder, it already has unit tests, it must be taken into account that unit tests depend on the situation, so if you want to run them again you have to create new cases. Here I show an image of the execution of the unit tests and the report of the coverage of those tests.
 
 ### Unittests result
-![alt text](https://wittline.github.io/RESTful-APIs-Nodejs/images/unittests.PNG)
+![alt text](https://github.com/Wittline/RESTful-APIs-Nodejs/blob/master/images/unittests.PNG)
 ### Coverage result
-![alt text](https://wittline.github.io/RESTful-APIs-Nodejs/images/coverage.PNG)
+![alt text](https://github.com/Wittline/RESTful-APIs-Nodejs/blob/master/images/coverage.PNG)
+
 
 
