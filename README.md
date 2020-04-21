@@ -1,5 +1,5 @@
-# RESTful APIs with Nodejs, mongoDB ad express.js
-Building RESTful services with Node, Express and MongoDB
+# RESTful APIs with Node, Mongodb and Express
+Building RESTful API REST services with Node.js, Express.js and Mongoose.js
 
 ## Scenario
 A brokerage firm needs to have an API service to process a set of buy/sell orders. This API must have two endpoints, the first one to create an account with the initial balance, and the second one to send the buy/sell orders. For each order, the API expect to receive a timestamp (for when it took place), an operation type (buy or sell), issuer name (stock’s identifier), a total amount of shares (a positive integer number), and the unitary price of the share (a positive real number).
@@ -163,6 +163,9 @@ they are considered duplicates:</strong> Operations for the same issuer and near
 
 <strong> Insufficient Stocks </strong>
 ![alt text](https://github.com/Wittline/RESTful-APIs-Nodejs/blob/master/images/7.PNG)
+
+## Checking collections and documents in MongoDB Compass
+![alt text](https://github.com/Wittline/RESTful-APIs-Nodejs/blob/master/images/9.PNG)
 
 
 
