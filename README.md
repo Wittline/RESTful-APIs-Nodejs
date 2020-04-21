@@ -121,7 +121,7 @@ they are considered duplicates:</strong> Operations for the same issuer and near
 
 *<strong> A business rule violation is not consired an error, since in the real world they may happen. In case any happens, you must list them in the output as an array, and have no changes applied for that order, following to process the next order:</strong> There is no information if the payload will have an array of orders that will be sent in the same request, it only specify about multiple payloads but in different requests, therefore, it is difficult to have, show and map the  "business errors" for each order, since it does not it will be known to which order the content of the array  is pointed. then the content of the array "business error" will have the last attempt in a request.
 
-### Choosed technologies and tools
+## Choosed technologies and tools
 * <strong>Nodejs:</strong> It is the technology used to host the API REST as a server application, it allows me to create non-blocking code which can scale quickly.
 * <strong>MongoDB:</strong> It is a database based on documents, and through the mongoosejs framework it will allow me to create queries to it using javascript.
 * <strong>express.js:</strong> It will allow me to create an API REST quickly and easy
@@ -131,7 +131,7 @@ they are considered duplicates:</strong> Operations for the same issuer and near
 * <strong>Mocha.js chai.js and chai-http.js:</strong> will allow me to create <strong>unittests</strong> 
 * <strong>nyc.js:</strong> It will allow me to have a measure of the <strong>coverage</strong> of the unittests
 
-### Conclusions
+## Conclusions
 <strong> Extensible </strong>
 The application code was designed to be extensible, if you want to add new APIs, just add the file of the new api inside the "routes" folder and there is no need to modify the existing code, then add the new controllers in the "controllers" , if we want add a new data model only use  the "models"  folder with the new mongoose schema,  this code architecture allows me to reuse existing code from a controller or a model, it also allows me to add filters to the original request and validate the payload using middlewares.
 
@@ -142,7 +142,10 @@ The existing code is non-blocking code, because of this, it can be easily scaled
 
 The application has a file called tests.js in the "test" folder, it already has unit tests, it must be taken into account that unit tests depend on the situation, so if you want to run them again you have to create new cases. Here I show an image of the execution of the unit tests and the report of the coverage of those tests.
 
-#### Unittests result
-#### Coverage result
+### Unittests result
+![alt text](https://github.com/Wittline/RESTful-APIs-Nodejs/blob/master/images/unittest.PNG)
+### Coverage result
+![alt text](https://github.com/Wittline/RESTful-APIs-Nodejs/blob/master/images/coverage.PNG)
+
 
 
