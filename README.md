@@ -131,6 +131,33 @@ they are considered duplicates:</strong> Operations for the same issuer and near
 * <strong>Mocha.js chai.js and chai-http.js:</strong> will allow me to create <strong>unittests</strong> 
 * <strong>nyc.js:</strong> It will allow me to have a measure of the <strong>coverage</strong> of the unittests
 
+## How to use the code
+* Install the lastes version of node from: <a href=" https://nodejs.org/en/"><strong> Install node </strong></a>
+* Install NodeJs.msi
+* Open Node.js command prompt and see the installed version
+* Install npm with the command:
+```
+ npm install npm -g
+```
+* Download the "server" folder from this repository
+* go to CMD and write the location of this folder on your computer
+
+![alt text](https://github.com/Wittline/RESTful-APIs-Nodejs/blob/master/images/1.PNG)
+
+* now write the command :
+```
+ npm start
+```
+![alt text](https://github.com/Wittline/RESTful-APIs-Nodejs/blob/master/images/2.PNG)
+
+![alt text](https://github.com/Wittline/RESTful-APIs-Nodejs/blob/master/images/3.PNG)
+![alt text](https://github.com/Wittline/RESTful-APIs-Nodejs/blob/master/images/4.PNG)
+![alt text](https://github.com/Wittline/RESTful-APIs-Nodejs/blob/master/images/5.PNG)
+![alt text](https://github.com/Wittline/RESTful-APIs-Nodejs/blob/master/images/6.PNG)
+![alt text](https://github.com/Wittline/RESTful-APIs-Nodejs/blob/master/images/7.PNG)
+
+
+
 ## Conclusions
 <strong> Extensible </strong>
 The application code was designed to be extensible, if you want to add new APIs, just add the file of the new api inside the "routes" folder and there is no need to modify the existing code, then add the new controllers in the "controllers" , if we want add a new data model only use  the "models"  folder with the new mongoose schema,  this code architecture allows me to reuse existing code from a controller or a model, it also allows me to add filters to the original request and validate the payload using middlewares.
