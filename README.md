@@ -109,4 +109,40 @@ If a business error occurs, the expected response should be:
   "business_errors": ["CLOSE_MARKET"]
 }
 ```
+## Translating  business rules and requirements into code
+*<strong> Insufficient Balance, When buying stocks, you must have enough cash in order to fulfill it:</strong> Before an operation of the type "BUY" the current balance will be checked, the number of shares to be purchased multiplied by the price of each share must be less than or equal to the current balance.
+
+*<strong> Insufficient Stocks, When selling stocks, you must have enough stocks in order to fulfill it:</strong> Before an operation of the type "SELL", it will be verified if the number of shares previously purchased are enough for the number of shares to be sold in the request.
+
+*<strong> Duplicated Operation, No operations for the same stock at the same amount must happen within a 5 minutes interval, as
+they are considered duplicates:</strong> Operations for the same issuer and nearby timestamps will be avoided, the date of the last order of the issuer that is sent in the request will be taken and a subtraction will be made between the two timestamps. The interval can be modified from the configuration file. the code will be separated in a middleware.
+
+*<strong> Closed Market, All operations must happen between 6am and 3pm. </strong> This code will be separated in a middleware, the timestamp hour will be extracted from the request, and it will be used to verified that the request is at the correct intervals to consume the API. The ranges can be modified from the configuration file.
+
+*<strong> A business rule violation is not consired an error, since in the real world they may happen. In case any happens, you must list them in the output as an array, and have no changes applied for that order, following to process the next order:</strong> There is no information if the payload will have an array of orders that will be sent in the same request, it only specify about multiple payloads but in different requests, therefore, it is difficult to have, show and map the  "business errors" for each order, since it does not it will be known to which order the content of the array  is pointed. then the content of the array "business error" will have the last attempt in a request.
+
+### Choosed technologies and tools
+* <strong>Nodejs:</strong> It is the technology used to host the API REST as a server application, it allows me to create non-blocking code which can scale quickly.
+* <strong>MongoDB:</strong> It is a database based on documents, and through the mongoosejs framework it will allow me to create queries to it using javascript.
+* <strong>express.js:</strong> It will allow me to create an API REST quickly and easy
+* <strong>Visual studio code</strong>
+* <strong>Postman:</strong> It will allow me to send test request to the API REST and check the responses
+* <strong>MongoDB Compass:</strong> It will allow me to check, and manage the collections and documents in the the mongodb databases
+* <strong>Mocha.js chai.js and chai-http.js:</strong> will allow me to create <strong>unittests</strong> 
+* <strong>nyc.js:</strong> It will allow me to have a measure of the <strong>coverage</strong> of the unittests
+
+### Conclusions
+<strong> Extensible </strong>
+The application code was designed to be extensible, if you want to add new APIs, just add the file of the new api inside the "routes" folder and there is no need to modify the existing code, then add the new controllers in the "controllers" , if we want add a new data model only use  the "models"  folder with the new mongoose schema,  this code architecture allows me to reuse existing code from a controller or a model, it also allows me to add filters to the original request and validate the payload using middlewares.
+
+<strong> Scalable </strong>
+The existing code is non-blocking code, because of this, it can be easily scaled, if there is  an APIs that are more in demand than others, it could be separated in another server or container, this allows copying the code quickly because each api is related to a set of separate modules allowing high granularity. The application has a middleware called "authenticated" that manages a JWT, this allows the application to be stateless and facilitates horizontal scaling, since the API consumption can be used by millions of users, and the server does not need to save the session user.
+
+<strong> Testable </strong>
+
+The application has a file called tests.js in the "test" folder, it already has unit tests, it must be taken into account that unit tests depend on the situation, so if you want to run them again you have to create new cases. Here I show an image of the execution of the unit tests and the report of the coverage of those tests.
+
+#### Unittests result
+#### Coverage result
+
 
