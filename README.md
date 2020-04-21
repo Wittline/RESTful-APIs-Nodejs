@@ -1,4 +1,4 @@
-# RESTful-APIs-Nodejs
+# RESTful APIs with Nodejs, mongoDB ad express.js
 Building RESTful services with Node, Express and MongoDB
 
 ## Scenario
@@ -150,10 +150,18 @@ they are considered duplicates:</strong> Operations for the same issuer and near
 ```
 ![alt text](https://github.com/Wittline/RESTful-APIs-Nodejs/blob/master/images/2.PNG)
 
+## Testing the API with Postman
+<strong> Creating a new account </strong>
 ![alt text](https://github.com/Wittline/RESTful-APIs-Nodejs/blob/master/images/3.PNG)
+
+<strong> Buy shares </strong>
 ![alt text](https://github.com/Wittline/RESTful-APIs-Nodejs/blob/master/images/4.PNG)
 ![alt text](https://github.com/Wittline/RESTful-APIs-Nodejs/blob/master/images/5.PNG)
+
+<strong> Sell shares </strong>
 ![alt text](https://github.com/Wittline/RESTful-APIs-Nodejs/blob/master/images/6.PNG)
+
+<strong> Insufficient Stocks </strong>
 ![alt text](https://github.com/Wittline/RESTful-APIs-Nodejs/blob/master/images/7.PNG)
 
 
