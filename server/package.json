@@ -16,7 +16,7 @@
     "connect-multiparty": "^2.0.0",
     "email-existence": "^0.1.6",
     "express": "^4.15.4",
-    "jwt-simple": "^0.5.1",
+    "jwt-simple": "^0.5.3",
     "moment": "^2.18.1",
     "mongoose": "^4.11.6",
     "mongoose-pagination": "^1.0.0",
