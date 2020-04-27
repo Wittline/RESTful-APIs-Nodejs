@@ -186,5 +186,12 @@ The application has a file called tests.js in the "test" folder, it already has 
 ### Coverage result
 ![alt text](https://wittline.github.io/RESTful-APIs-Nodejs/images/coverage.PNG)
 
+# Contributing and Feedback
+Any ideas or feedback about this research?. Help me to improve it.
 
+# Authors
+- Created by <a href="https://www.linkedin.com/in/ramsescoraspe"><strong>Ramses Alexander Coraspe Valdez</strong></a>
+- Created on April, 2020
 
+# License
+This project is licensed under the terms of the MIT license.
