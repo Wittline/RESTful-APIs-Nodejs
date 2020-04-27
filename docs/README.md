@@ -143,7 +143,7 @@ they are considered duplicates:</strong> Operations for the same issuer and near
 * Download the "server" folder from this repository
 * go to CMD and write the location of this folder on your computer
 
-![alt text](https://github.com/Wittline/RESTful-APIs-Nodejs/blob/master/images/1.PNG)
+![alt text](https://github.com/Wittline/RESTful-APIs-Nodejs/blob/master/docs/images/1.PNG)
 
 * now write the command :
 ```
