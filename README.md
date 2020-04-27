@@ -110,16 +110,16 @@ If a business error occurs, the expected response should be:
 }
 ```
 ## Translating  business rules and requirements into code
-*<strong> Insufficient Balance, When buying stocks, you must have enough cash in order to fulfill it:</strong> Before an operation of the type "BUY" the current balance will be checked, the number of shares to be purchased multiplied by the price of each share must be less than or equal to the current balance.
+* <strong> Insufficient Balance, When buying stocks, you must have enough cash in order to fulfill it:</strong> Before an operation of the type "BUY" the current balance will be checked, the number of shares to be purchased multiplied by the price of each share must be less than or equal to the current balance.
 
-*<strong> Insufficient Stocks, When selling stocks, you must have enough stocks in order to fulfill it:</strong> Before an operation of the type "SELL", it will be verified if the number of shares previously purchased are enough for the number of shares to be sold in the request.
+* <strong> Insufficient Stocks, When selling stocks, you must have enough stocks in order to fulfill it:</strong> Before an operation of the type "SELL", it will be verified if the number of shares previously purchased are enough for the number of shares to be sold in the request.
 
-*<strong> Duplicated Operation, No operations for the same stock at the same amount must happen within a 5 minutes interval, as
+* <strong> Duplicated Operation, No operations for the same stock at the same amount must happen within a 5 minutes interval, as
 they are considered duplicates:</strong> Operations for the same issuer and nearby timestamps will be avoided, the date of the last order of the issuer that is sent in the request will be taken and a subtraction will be made between the two timestamps. The interval can be modified from the configuration file. the code will be separated in a middleware.
 
-*<strong> Closed Market, All operations must happen between 6am and 3pm. </strong> This code will be separated in a middleware, the timestamp hour will be extracted from the request, and it will be used to verified that the request is at the correct intervals to consume the API. The ranges can be modified from the configuration file.
+* <strong> Closed Market, All operations must happen between 6am and 3pm. </strong> This code will be separated in a middleware, the timestamp hour will be extracted from the request, and it will be used to verified that the request is at the correct intervals to consume the API. The ranges can be modified from the configuration file.
 
-*<strong> A business rule violation is not consired an error, since in the real world they may happen. In case any happens, you must list them in the output as an array, and have no changes applied for that order, following to process the next order:</strong> There is no information if the payload will have an array of orders that will be sent in the same request, it only specify about multiple payloads but in different requests, therefore, it is difficult to have, show and map the  "business errors" for each order, since it does not it will be known to which order the content of the array  is pointed. then the content of the array "business error" will have the last attempt in a request.
+* <strong> A business rule violation is not consired an error, since in the real world they may happen. In case any happens, you must list them in the output as an array, and have no changes applied for that order, following to process the next order:</strong> There is no information if the payload will have an array of orders that will be sent in the same request, it only specify about multiple payloads but in different requests, therefore, it is difficult to have, show and map the  "business errors" for each order, since it does not it will be known to which order the content of the array  is pointed. then the content of the array "business error" will have the last attempt in a request.
 
 ## Choosed technologies and tools
 * <strong>Nodejs:</strong> It is the technology used to host the API REST as a server application, it allows me to create non-blocking code which can scale quickly.
