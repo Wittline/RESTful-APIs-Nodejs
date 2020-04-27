@@ -149,24 +149,24 @@ they are considered duplicates:</strong> Operations for the same issuer and near
 ```
  npm start
 ```
-![alt text](https://github.com/Wittline/RESTful-APIs-Nodejs/blob/master/images/2.PNG)
+![alt text](https://github.com/Wittline/RESTful-APIs-Nodejs/blob/master/docs/images/2.PNG)
 
 ## Testing the API with Postman
 <strong> Creating a new account </strong>
-![alt text](https://github.com/Wittline/RESTful-APIs-Nodejs/blob/master/images/3.PNG)
+![alt text](https://github.com/Wittline/RESTful-APIs-Nodejs/blob/master/docs/images/3.PNG)
 
 <strong> Buy shares </strong>
-![alt text](https://github.com/Wittline/RESTful-APIs-Nodejs/blob/master/images/4.PNG)
-![alt text](https://github.com/Wittline/RESTful-APIs-Nodejs/blob/master/images/5.PNG)
+![alt text](https://github.com/Wittline/RESTful-APIs-Nodejs/blob/master/docs/images/4.PNG)
+![alt text](https://github.com/Wittline/RESTful-APIs-Nodejs/blob/master/docs/images/5.PNG)
 
 <strong> Sell shares </strong>
-![alt text](https://github.com/Wittline/RESTful-APIs-Nodejs/blob/master/images/6.PNG)
+![alt text](https://github.com/Wittline/RESTful-APIs-Nodejs/blob/master/docs/images/6.PNG)
 
 <strong> Insufficient Stocks </strong>
-![alt text](https://github.com/Wittline/RESTful-APIs-Nodejs/blob/master/images/7.PNG)
+![alt text](https://github.com/Wittline/RESTful-APIs-Nodejs/blob/master/docs/images/7.PNG)
 
 ## Checking collections and documents in MongoDB Compass
-![alt text](https://github.com/Wittline/RESTful-APIs-Nodejs/blob/master/images/9.PNG)
+![alt text](https://github.com/Wittline/RESTful-APIs-Nodejs/blob/master/docs/images/9.PNG)
 
 
 
@@ -182,9 +182,9 @@ The existing code is non-blocking code, because of this, it can be easily scaled
 The application has a file called tests.js in the "test" folder, it already has unit tests, it must be taken into account that unit tests depend on the situation, so if you want to run them again you have to create new cases. Here I show an image of the execution of the unit tests and the report of the coverage of those tests.
 
 ### Unittests result
-![alt text](https://github.com/Wittline/RESTful-APIs-Nodejs/blob/master/images/unittest.PNG)
+![alt text](https://github.com/Wittline/RESTful-APIs-Nodejs/blob/master/images/docs/unittest.PNG)
 ### Coverage result
-![alt text](https://github.com/Wittline/RESTful-APIs-Nodejs/blob/master/images/coverage.PNG)
+![alt text](https://github.com/Wittline/RESTful-APIs-Nodejs/blob/master/images/docs/coverage.PNG)
 
 
 
