@@ -1,4 +1,4 @@
-# RESTful APIs with Node, Mongodb and Express
+# RESTful APIs with NodeJS, Mongodb and Express
 Building RESTful API REST services with Node.js, Express.js and Mongoose.js
 
 ## Scenario
