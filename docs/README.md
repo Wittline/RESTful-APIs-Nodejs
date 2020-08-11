@@ -23,8 +23,7 @@ The first endpoint will be used to create an investment account. The expected co
 ### Request:
 ```POST /accounts```
 ### Body:
-```
- 
+``` 
   {
    "cash": 1000
   }
