@@ -20,7 +20,7 @@
     "moment": "^2.18.1",
     "mongoose": "^5.7.5",
     "mongoose-pagination": "^1.0.0",
-    "validator": "^10.2.0"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "babel": "^6.23.0",
